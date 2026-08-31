@@ -1,0 +1,653 @@
+/* ==========================================================================
+   Mamãe Nutre — Landing Page
+   ========================================================================== */
+
+:root {
+  --brown: #974A31;
+  --brown-dark: #240C00;
+  --cream: #EED3C6;
+  --cream-2: #E7CFBF;
+  --cream-3: #FFF9E8;
+  --peach: #FFC29B;
+  --pink: #FFA5BB;
+  --orange: #D05632;
+  --green: #62E652;
+  --white: #FFFFFF;
+  --text-dark: #280b0b;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+
+  --radius-lg: 32px;
+  --radius-md: 24px;
+  --radius-sm: 16px;
+
+  --container-width: 1200px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 { font-family: var(--font-heading); margin: 0; }
+p { margin: 0; }
+ul { margin: 0; padding: 0; }
+
+.only-desktop { display: none; }
+@media (min-width: 768px) { .only-desktop { display: inline; } }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-align: center;
+  border-radius: 999px;
+  cursor: pointer;
+  border: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn--cta {
+  background: var(--green);
+  color: #123307;
+  font-size: 18px;
+  padding: 20px 32px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 8px 0 #3ca02a, 0 14px 24px rgba(0,0,0,.25);
+}
+.btn--cta:hover { transform: translateY(-2px); }
+.btn--cta:active { transform: translateY(2px); box-shadow: 0 4px 0 #3ca02a; }
+
+/* ---------- Section spacing helpers ---------- */
+section { position: relative; }
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero {
+  background-image:
+    linear-gradient(rgba(255,165,187,.95), rgba(255,165,187,.95)),
+    url('https://patriciaroberta.com.br/wp-content/uploads/2026/04/backgroud-01-1.webp');
+  background-size: cover;
+  background-position: center;
+  padding: 40px 16px 48px;
+}
+.hero__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.hero__title {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.15;
+  text-shadow: 0 2px 4px rgba(0,0,0,.4);
+  margin-bottom: 8px;
+}
+.hero__title .destaque { color: var(--white); }
+.hero__subtitle {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 16px;
+  text-shadow: 0 2px 4px rgba(255,233,233,.6);
+  margin-bottom: 16px;
+}
+.hero__mockup {
+  max-width: 340px;
+  margin: 0 auto 16px;
+  filter: drop-shadow(0 0 18px rgba(255,255,255,.5));
+}
+.hero__desc {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  font-size: 14px;
+  font-style: italic;
+  text-shadow: 1px 2px 0 rgba(0,0,0,.05);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .hero { padding: 60px 24px 90px; }
+  .hero__title { font-size: 34px; }
+  .hero__subtitle { font-size: 20px; }
+  .hero__mockup { max-width: 420px; }
+  .hero__desc { font-size: 17px; padding: 28px 36px; }
+}
+
+/* ==========================================================================
+   LOGO STRIP
+   ========================================================================== */
+.logo-strip {
+  background: var(--cream);
+  padding: 24px 0;
+  overflow: hidden;
+}
+.logo-strip__track {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+  overflow-x: auto;
+  padding: 0 16px;
+  scrollbar-width: none;
+}
+.logo-strip__track::-webkit-scrollbar { display: none; }
+.logo-strip__track img {
+  height: 32px;
+  width: auto;
+  flex: 0 0 auto;
+  opacity: .9;
+}
+@media (min-width: 768px) {
+  .logo-strip__track { justify-content: center; gap: 60px; flex-wrap: wrap; overflow: visible; }
+  .logo-strip__track img { height: 44px; }
+}
+
+/* ==========================================================================
+   PAIN SECTION
+   ========================================================================== */
+.pain {
+  background-color: var(--white);
+  background-image: url('https://patriciaroberta.com.br/wp-content/uploads/2026/04/BACKGROUD-02-SEM-FUNDO.webp');
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: cover;
+  padding: 32px 16px;
+}
+.pain__inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.pain__mockup--desktop { display: none; }
+.pain__mockup--mobile { max-width: 280px; margin: 12px auto; }
+.pain__content { width: 100%; text-align: center; }
+.pain__title {
+  color: var(--brown);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+.pain__subtitle {
+  color: var(--brown);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.pain__card {
+  background: rgba(255,255,255,.6);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  color: var(--brown);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  text-align: left;
+  max-width: 640px;
+  margin: 8px auto 0;
+}
+.pain__card p { margin-bottom: 14px; }
+.pain__card p:last-child { margin-bottom: 0; }
+
+@media (min-width: 900px) {
+  .pain { padding: 60px 40px; min-height: 700px; display: flex; align-items: center; }
+  .pain__inner { flex-direction: row; align-items: center; gap: 40px; text-align: left; }
+  .pain__mockup--desktop { display: block; flex: 0 0 42%; max-width: 420px; border-radius: 47px; }
+  .pain__mockup--mobile { display: none; }
+  .pain__content { flex: 1; text-align: left; }
+  .pain__title { font-size: 30px; }
+  .pain__subtitle { font-size: 22px; }
+  .pain__card { text-align: left; margin: 8px 0 0; }
+}
+
+/* ==========================================================================
+   INTRO / APRESENTANDO
+   ========================================================================== */
+.intro {
+  background: var(--brown);
+  padding: 48px 16px;
+  text-align: center;
+}
+.intro__eyebrow {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.intro__desc {
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 500;
+  max-width: 640px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+.intro__divider {
+  width: 33%;
+  max-width: 220px;
+  height: 2.7px;
+  background: var(--white);
+  margin: 0 auto 40px;
+}
+.intro__mockup {
+  max-width: 320px;
+  margin: 0 auto;
+}
+.intro__note {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 24px;
+  line-height: 1.5;
+}
+@media (min-width: 768px) {
+  .intro { padding: 70px 24px; }
+  .intro__eyebrow { font-size: 30px; }
+  .intro__desc { font-size: 20px; }
+  .intro__mockup { max-width: 460px; }
+  .intro__note { font-size: 20px; }
+}
+
+/* ==========================================================================
+   PROTOCOLS
+   ========================================================================== */
+.protocols {
+  background-color: var(--white);
+  background-image: url('https://patriciaroberta.com.br/wp-content/uploads/2026/04/BACKGROUD-03-SEM-FUNDO-scaled.webp');
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  padding: 40px 16px 60px;
+  text-align: center;
+}
+.protocols__badge {
+  display: inline-block;
+  background: var(--brown);
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: var(--radius-md);
+  margin-bottom: 16px;
+}
+.protocols__title {
+  color: var(--brown);
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.protocols__mockup {
+  max-width: 340px;
+  margin: 0 auto 24px;
+}
+.protocols__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  text-align: left;
+}
+.protocol-card {
+  background: var(--brown);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+}
+.protocol-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.protocol-card h3 span { font-weight: 500; font-size: 15px; opacity: .9; }
+.protocol-card p {
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .protocols { padding: 70px 40px 90px; }
+  .protocols__badge { font-size: 30px; }
+  .protocols__title { font-size: 19px; }
+  .protocols__mockup { max-width: 620px; margin-bottom: -40px; }
+  .protocols__grid { grid-template-columns: repeat(2, 1fr); margin-top: 40px; }
+}
+@media (min-width: 1100px) {
+  .protocols__grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ---- Recipes / Teas extras ---- */
+.extras {
+  max-width: var(--container-width);
+  margin: 48px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.extras__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.extras__item img { max-width: 280px; }
+.extras__card {
+  background: var(--brown);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  text-align: center;
+  max-width: 480px;
+}
+.extras__card h3 { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+.extras__card p { font-size: 14px; font-weight: 500; line-height: 1.6; }
+
+@media (min-width: 768px) {
+  .extras { flex-direction: row; justify-content: center; gap: 40px; }
+  .extras__item { flex-direction: row; align-items: center; }
+  .extras__item img { max-width: 220px; }
+  .extras__card { text-align: left; }
+}
+
+/* ==========================================================================
+   TESTIMONIALS
+   ========================================================================== */
+.testimonials {
+  background: var(--cream-2);
+  padding: 40px 16px;
+}
+.testimonials__card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--brown);
+  border-radius: var(--radius-lg);
+  padding: 32px 20px;
+  text-align: center;
+}
+.testimonials__title {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+.testimonials__carousel {
+  position: relative;
+  background: var(--brown-dark);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  min-height: 200px;
+}
+.testimonial-slide {
+  display: none;
+  animation: fade .4s ease;
+}
+.testimonial-slide.is-active { display: block; }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.testimonial-slide__quote {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.testimonial-slide__name {
+  color: var(--white);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+}
+.testimonials__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.testimonials__dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255,.4);
+  cursor: pointer;
+  padding: 0;
+}
+.testimonials__dots button.is-active { background: var(--white); }
+
+@media (min-width: 768px) {
+  .testimonials__title { font-size: 30px; }
+  .testimonial-slide__quote { font-size: 18px; }
+}
+
+/* ==========================================================================
+   BONUS
+   ========================================================================== */
+.bonus {
+  background: var(--white);
+  padding: 48px 16px;
+}
+.bonus__title {
+  text-align: center;
+  color: var(--brown);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+}
+.bonus__grid {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+.bonus-card {
+  border: 2px solid var(--cream);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.bonus-card img { width: 100%; }
+.bonus-card__body { padding: 24px; }
+.bonus-card h3 {
+  color: var(--brown);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.bonus-card__lead {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: var(--text-dark);
+}
+.bonus-card ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+.bonus-card li { font-size: 13.5px; line-height: 1.5; }
+.bonus-card li strong { color: var(--brown); margin-right: 4px; }
+.bonus-card__value { font-size: 16px; font-weight: 700; }
+.strike { text-decoration: line-through; opacity: .6; margin-right: 8px; }
+.free { color: #1c8a1c; }
+
+@media (min-width: 900px) {
+  .bonus__title { font-size: 32px; }
+  .bonus__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ==========================================================================
+   OFFER
+   ========================================================================== */
+.offer {
+  background: var(--cream-3);
+  padding: 48px 16px;
+}
+.offer__card {
+  max-width: 560px;
+  margin: 0 auto;
+  background: var(--orange);
+  border-radius: var(--radius-lg);
+  padding: 32px 24px;
+  text-align: center;
+  color: var(--white);
+}
+.offer__eyebrow {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+.offer__mockup { max-width: 260px; margin: 0 auto 20px; }
+.offer__old-value { font-size: 16px; margin-bottom: 4px; }
+.offer__lead-in { font-size: 16px; margin-bottom: 4px; }
+.offer__price {
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.offer__note { font-size: 13px; margin-bottom: 6px; opacity: .95; }
+.offer__payment { font-size: 14px; font-weight: 700; letter-spacing: 1px; margin-bottom: 20px; }
+.offer__trust { font-size: 13px; margin-top: 16px; opacity: .95; }
+
+@media (min-width: 768px) {
+  .offer__price { font-size: 72px; }
+}
+
+/* ==========================================================================
+   GUARANTEE
+   ========================================================================== */
+.guarantee {
+  background: var(--peach);
+  padding: 40px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.guarantee__seal { max-width: 140px; }
+.guarantee__content h2 {
+  color: var(--brown);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.guarantee__content p {
+  color: var(--text-dark);
+  font-size: 15px;
+  font-weight: 500;
+  max-width: 480px;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .guarantee { flex-direction: row; justify-content: center; text-align: left; padding: 60px 40px; }
+  .guarantee__content h2 { font-size: 28px; }
+}
+
+/* ==========================================================================
+   FAQ
+   ========================================================================== */
+.faq {
+  background: var(--white);
+  padding: 48px 16px;
+}
+.faq__title {
+  text-align: center;
+  color: var(--brown);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 28px;
+  letter-spacing: 1px;
+}
+.faq__list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  border: 1px solid var(--cream);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.faq-item__question {
+  width: 100%;
+  background: var(--white);
+  border: none;
+  text-align: left;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--brown);
+  padding: 18px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-item__icon {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+.faq-item__icon::before,
+.faq-item__icon::after {
+  content: '';
+  position: absolute;
+  background: var(--brown);
+  transition: transform .2s ease;
+}
+.faq-item__icon::before { top: 9px; left: 0; width: 20px; height: 2px; }
+.faq-item__icon::after { top: 0; left: 9px; width: 2px; height: 20px; }
+.faq-item__question[aria-expanded="true"] .faq-item__icon::after { transform: rotate(90deg); opacity: 0; }
+.faq-item__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease;
+}
+.faq-item__answer p {
+  padding: 0 20px 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+.faq__cta { display: block; margin: 32px auto 0; }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.site-footer {
+  background: var(--brown);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+}
