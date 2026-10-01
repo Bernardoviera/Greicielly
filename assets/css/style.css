@@ -134,6 +134,7 @@ section { position: relative; }
    LOGO STRIP
    ========================================================================== */
 .logo-strip {
+  --logo-gap: 32px;
   background: var(--cream);
   padding: 24px 0;
   overflow: hidden;
@@ -141,22 +142,36 @@ section { position: relative; }
 .logo-strip__track {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 32px;
-  overflow-x: auto;
-  padding: 0 16px;
-  scrollbar-width: none;
+  width: max-content;
+  animation: logo-marquee 30s linear infinite;
+  will-change: transform;
 }
-.logo-strip__track::-webkit-scrollbar { display: none; }
-.logo-strip__track img {
+.logo-strip:hover .logo-strip__track { animation-play-state: paused; }
+.logo-strip__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex: 0 0 auto;
+  min-width: 100vw;
+  gap: var(--logo-gap);
+  padding-right: var(--logo-gap);
+}
+.logo-strip__group img {
   height: 32px;
   width: auto;
   flex: 0 0 auto;
   opacity: .9;
 }
+@keyframes logo-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
 @media (min-width: 768px) {
-  .logo-strip__track { justify-content: center; gap: 60px; flex-wrap: wrap; overflow: visible; }
-  .logo-strip__track img { height: 44px; }
+  .logo-strip { --logo-gap: 60px; }
+  .logo-strip__group img { height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-strip__track { animation-duration: 90s; }
 }
 
 /* ==========================================================================
