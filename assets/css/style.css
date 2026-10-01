@@ -43,7 +43,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 
 h1, h2, h3 { font-family: var(--font-heading); margin: 0; }
 p { margin: 0; }
@@ -86,7 +86,7 @@ section { position: relative; }
 .hero {
   background-image:
     linear-gradient(rgba(255,165,187,.95), rgba(255,165,187,.95)),
-    url('https://patriciaroberta.com.br/wp-content/uploads/2026/04/backgroud-01-1.webp');
+    url('../img/hero-bg.webp');
   background-size: cover;
   background-position: center;
   padding: 40px 16px 48px;
@@ -183,7 +183,7 @@ section { position: relative; }
    ========================================================================== */
 .pain {
   background-color: var(--white);
-  background-image: url('https://patriciaroberta.com.br/wp-content/uploads/2026/04/BACKGROUD-02-SEM-FUNDO.webp');
+  background-image: url('../img/bg-dor.webp');
   background-repeat: no-repeat;
   background-position: center left;
   background-size: cover;
@@ -293,7 +293,7 @@ section { position: relative; }
    ========================================================================== */
 .protocols {
   background-color: var(--white);
-  background-image: url('https://patriciaroberta.com.br/wp-content/uploads/2026/04/BACKGROUD-03-SEM-FUNDO-scaled.webp');
+  background-image: url('../img/bg-protocolos.webp');
   background-repeat: no-repeat;
   background-position: top left;
   background-size: cover;
@@ -607,6 +607,7 @@ section { position: relative; }
 }
 .offer__note { font-size: 13px; margin-bottom: 6px; opacity: .95; }
 .offer__payment { font-size: 14px; font-weight: 700; letter-spacing: 1px; margin-bottom: 20px; }
+.offer__methods { font-size: 14px; font-weight: 600; margin: -8px 0 20px; }
 .offer__trust { font-size: 13px; margin-top: 16px; opacity: .95; }
 
 @media (min-width: 768px) {
